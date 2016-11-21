@@ -20,11 +20,10 @@ public class LoginController {
 	public String auth(@ModelAttribute LoginDTO loginDTO, HttpServletRequest request) {
 		HttpSession session = request.getSession(true);
 		System.out.println("inside auth method controller...,,.");
-		System.out.println("EGIT");
 		System.out.println("login dto \t" + loginDTO);
 		if ("om".equals(loginDTO.getUserid()) && "pass".equals(loginDTO.getPwd())) {
-			System.out.println("Valid user....");
-			session.setAttribute("userid is", loginDTO.getUserid());
+			System.out.println("Valid user");
+			session.setAttribute("userid", loginDTO.getUserid());
 			return "/Home.jsp";
 		}
 		System.out.println("Invalid user");
