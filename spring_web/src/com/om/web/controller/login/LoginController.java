@@ -19,7 +19,10 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String auth(@ModelAttribute LoginDTO loginDTO, HttpServletRequest request) {
 		HttpSession session = request.getSession(true);
-		System.out.println("inside auth method controller...,,.");
+		System.out.println("inside auth method controller...");
+		
+		System.out.println("EGIT conection");
+		
 		System.out.println("login dto \t" + loginDTO);
 		if ("om".equals(loginDTO.getUserid()) && "pass".equals(loginDTO.getPwd())) {
 			System.out.println("Valid user");
